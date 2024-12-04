@@ -60,15 +60,15 @@ const rules: KarabinerRules[] = [
       "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
     ),
     // b = "B"rowse
-    b: {
-      t: open("https://twitter.com"),
-      // Quarterly "P"lan
-      p: open("https://mxstbr.com/cal"),
-      y: open("https://news.ycombinator.com"),
-      f: open("https://facebook.com"),
-      r: open("https://reddit.com"),
-      h: open("https://hashnode.com/draft"),
-    },
+    // b: {
+    //   t: open("https://twitter.com"),
+    //   // Quarterly "P"lan
+    //   p: open("https://mxstbr.com/cal"),
+    //   y: open("https://news.ycombinator.com"),
+    //   f: open("https://facebook.com"),
+    //   r: open("https://reddit.com"),
+    //   h: open("https://hashnode.com/draft"),
+    // },
     // o = "Open" applications
     o: {
       1: app("1Password"),
@@ -79,7 +79,7 @@ const rules: KarabinerRules[] = [
       s: app("Slack"),
       e: app("Superhuman"),
       n: app("Notion"),
-      t: app("Terminal"),
+      t: app("Warp"),
       // Open todo list managed via *H*ypersonic
       h: open(
         "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
@@ -87,33 +87,18 @@ const rules: KarabinerRules[] = [
       z: app("zoom.us"),
       // "M"arkdown (Reflect.app)
       m: app("Reflect"),
-      r: app("Reflect"),
+      r: app("Rider"),
       f: app("Finder"),
       // "i"Message
       i: app("Texts"),
       p: app("Spotify"),
-      a: app("iA Presenter"),
+      a: app("Arc"),
       // "W"hatsApp has been replaced by Texts
       w: open("Texts"),
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
       ),
     },
-
-    // TODO: This doesn't quite work yet.
-    // l = "Layouts" via Raycast's custom window management
-    // l: {
-    //   // Coding layout
-    //   c: shell`
-    //     open -a "Visual Studio Code.app"
-    //     sleep 0.2
-    //     open -g "raycast://customWindowManagementCommand?position=topLeft&relativeWidth=0.5"
-
-    //     open -a "Terminal.app"
-    //     sleep 0.2
-    //     open -g "raycast://customWindowManagementCommand?position=topRight&relativeWidth=0.5"
-    //   `,
-    // },
 
     // w = "Window" via rectangle.app
     w: {
@@ -325,31 +310,7 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
       ),
     },
-  }),
-  {
-    description: "Change Backspace to Spacebar when Minecraft is focused",
-    manipulators: [
-      {
-        type: "basic",
-        from: {
-          key_code: "delete_or_backspace",
-        },
-        to: [
-          {
-            key_code: "spacebar",
-          },
-        ],
-        conditions: [
-          {
-            type: "frontmost_application_if",
-            file_paths: [
-              "^/Users/mxstbr/Library/Application Support/minecraft/runtime/java-runtime-gamma/mac-os-arm64/java-runtime-gamma/jre.bundle/Contents/Home/bin/java$",
-            ],
-          },
-        ],
-      },
-    ],
-  },
+  })
 ];
 
 fs.writeFileSync(
