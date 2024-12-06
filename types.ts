@@ -134,6 +134,7 @@ export interface To {
     name: string;
     value: boolean | number | string;
   };
+  select_input_source?: InputSource;
   mouse_key?: MouseKey;
   pointing_button?: string;
   /**

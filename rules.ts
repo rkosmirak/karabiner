@@ -8,9 +8,9 @@ const rules: KarabinerRules[] = [
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
-        description: "Caps Lock -> Hyper Key",
+        description: "Tab -> Hyper Key",
         from: {
-          key_code: "caps_lock",
+          key_code: "tab",
           modifiers: {
             optional: ["any"],
           },
@@ -33,7 +33,7 @@ const rules: KarabinerRules[] = [
         ],
         to_if_alone: [
           {
-            key_code: "escape",
+            key_code: "tab",
           },
         ],
         type: "basic",
@@ -60,15 +60,15 @@ const rules: KarabinerRules[] = [
       "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
     ),
     // b = "B"rowse
-    // b: {
-    //   t: open("https://twitter.com"),
+    b: {
+       t: open("https://translate.google.com"),
     //   // Quarterly "P"lan
     //   p: open("https://mxstbr.com/cal"),
     //   y: open("https://news.ycombinator.com"),
     //   f: open("https://facebook.com"),
     //   r: open("https://reddit.com"),
     //   h: open("https://hashnode.com/draft"),
-    // },
+    },
     // o = "Open" applications
     o: {
       1: app("1Password"),
@@ -100,6 +100,28 @@ const rules: KarabinerRules[] = [
       ),
     },
 
+    l: {
+      u: {
+        description: "Change language to Ukrainian",
+        to: [
+          {
+            "select_input_source": {
+              "language": "uk"
+            }
+          }
+        ]
+      },
+      e: {
+        description: "Change language to English",
+        to: [
+          {
+            "select_input_source": {
+              "language": "en"
+            }
+          }
+        ]
+      }
+    },
     // w = "Window" via rectangle.app
     w: {
       semicolon: {
@@ -326,6 +348,12 @@ fs.writeFileSync(
           complex_modifications: {
             rules,
           },
+          "simple_modifications": [
+            {
+                "from": { "key_code": "caps_lock" },
+                "to": [{ "key_code": "left_control" }]
+            }
+            ],
         },
       ],
     },
