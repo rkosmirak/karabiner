@@ -46,6 +46,32 @@
             ]
           },
           {
+            "description": "Post escape if caps is pressed alone, left_ctrl otherwise",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_control"
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Hyper Key + spacebar",
             "manipulators": [
               {
@@ -999,10 +1025,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -g rectangle://execute-action?name=previous-display"
+                    "shell_command": "open raycast://extensions/raycast/window-management/previous-display"
                   }
                 ],
-                "description": "Window: previous-display",
+                "description": "Open raycast://extensions/raycast/window-management/previous-display",
                 "type": "basic",
                 "from": {
                   "key_code": "y",
@@ -1023,10 +1049,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -g rectangle://execute-action?name=next-display"
+                    "shell_command": "open raycast://extensions/raycast/window-management/next-display"
                   }
                 ],
-                "description": "Window: next-display",
+                "description": "Open raycast://extensions/raycast/window-management/next-display",
                 "type": "basic",
                 "from": {
                   "key_code": "o",
@@ -1047,10 +1073,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -g rectangle://execute-action?name=top-half"
+                    "shell_command": "open raycast://extensions/raycast/window-management/top-half"
                   }
                 ],
-                "description": "Window: top-half",
+                "description": "Open raycast://extensions/raycast/window-management/top-half",
                 "type": "basic",
                 "from": {
                   "key_code": "k",
@@ -1071,10 +1097,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -g rectangle://execute-action?name=bottom-half"
+                    "shell_command": "open raycast://extensions/raycast/window-management/bottom-half"
                   }
                 ],
-                "description": "Window: bottom-half",
+                "description": "Open raycast://extensions/raycast/window-management/bottom-half",
                 "type": "basic",
                 "from": {
                   "key_code": "j",
@@ -1095,10 +1121,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -g rectangle://execute-action?name=left-half"
+                    "shell_command": "open raycast://extensions/raycast/window-management/left-half"
                   }
                 ],
-                "description": "Window: left-half",
+                "description": "Open raycast://extensions/raycast/window-management/left-half",
                 "type": "basic",
                 "from": {
                   "key_code": "h",
@@ -1119,10 +1145,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -g rectangle://execute-action?name=right-half"
+                    "shell_command": "open raycast://extensions/raycast/window-management/right-half"
                   }
                 ],
-                "description": "Window: right-half",
+                "description": "Open raycast://extensions/raycast/window-management/right-half",
                 "type": "basic",
                 "from": {
                   "key_code": "l",
@@ -1143,10 +1169,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -g rectangle://execute-action?name=maximize"
+                    "shell_command": "open raycast://extensions/raycast/window-management/maximize"
                   }
                 ],
-                "description": "Window: maximize",
+                "description": "Open raycast://extensions/raycast/window-management/maximize",
                 "type": "basic",
                 "from": {
                   "key_code": "f",
@@ -2436,19 +2462,7 @@
             ]
           }
         ]
-      },
-      "simple_modifications": [
-        {
-          "from": {
-            "key_code": "caps_lock"
-          },
-          "to": [
-            {
-              "key_code": "left_control"
-            }
-          ]
-        }
-      ]
+      }
     }
   ]
 }

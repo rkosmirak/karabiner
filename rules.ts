@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
+import { createHyperSubLayers, app, open, shell } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -54,6 +54,32 @@ const rules: KarabinerRules[] = [
       //        ],
       //      },
     ],
+  },
+  {
+    "description": "Post escape if caps is pressed alone, left_ctrl otherwise",
+    "manipulators": [
+          {
+              "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                      "optional": [
+                          "any"
+                      ]
+                  }
+              },
+              "to": [
+                  {
+                      "key_code": "left_control"
+                  }
+              ],
+              "to_if_alone": [
+                  {
+                      "key_code": "escape"
+                  }
+              ],
+              "type": "basic"
+          }
+      ]
   },
   ...createHyperSubLayers({
     spacebar: open(
@@ -133,13 +159,13 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      y: rectangle("previous-display"),
-      o: rectangle("next-display"),
-      k: rectangle("top-half"),
-      j: rectangle("bottom-half"),
-      h: rectangle("left-half"),
-      l: rectangle("right-half"),
-      f: rectangle("maximize"),
+      y: open("raycast://extensions/raycast/window-management/previous-display"),
+      o: open("raycast://extensions/raycast/window-management/next-display"),
+      k: open("raycast://extensions/raycast/window-management/top-half"),
+      j: open("raycast://extensions/raycast/window-management/bottom-half"),
+      h: open("raycast://extensions/raycast/window-management/left-half"),
+      l: open("raycast://extensions/raycast/window-management/right-half"),
+      f: open("raycast://extensions/raycast/window-management/maximize"),
       u: {
         description: "Window: Previous Tab",
         to: [
@@ -348,13 +374,7 @@ fs.writeFileSync(
           complex_modifications: {
             rules,
           },
-          "simple_modifications": [
-            {
-                "from": { "key_code": "caps_lock" },
-                "to": [{ "key_code": "left_control" }]
-            }
-            ],
-        },
+        }
       ],
     },
     null,
