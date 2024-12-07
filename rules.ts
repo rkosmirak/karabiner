@@ -85,6 +85,26 @@ const rules: KarabinerRules[] = [
     spacebar: open(
       "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
     ),
+    1: {
+      description: "Change language to Ukrainian",
+      to: [
+        {
+          "select_input_source": {
+            "language": "uk"
+          }
+        }
+      ]
+    },
+    2: {
+      description: "Change language to English",
+      to: [
+        {
+          "select_input_source": {
+            "language": "en"
+          }
+        }
+      ]
+    },
     // b = "B"rowse
     b: {
        t: open("https://translate.google.com"),
@@ -124,29 +144,6 @@ const rules: KarabinerRules[] = [
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
       ),
-    },
-
-    l: {
-      u: {
-        description: "Change language to Ukrainian",
-        to: [
-          {
-            "select_input_source": {
-              "language": "uk"
-            }
-          }
-        ]
-      },
-      e: {
-        description: "Change language to English",
-        to: [
-          {
-            "select_input_source": {
-              "language": "en"
-            }
-          }
-        ]
-      }
     },
     // w = "Window" via rectangle.app
     w: {
