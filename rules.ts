@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, shell } from "./utils";
+import { createHyperSubLayers, app, open, shell, raycastWindow } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -82,9 +82,7 @@ const rules: KarabinerRules[] = [
       ]
   },
   ...createHyperSubLayers({
-    spacebar: open(
-      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
-    ),
+    spacebar: app("Todoist"),
     1: {
       description: "Change language to Ukrainian",
       to: [
@@ -156,13 +154,13 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      y: open("raycast://extensions/raycast/window-management/previous-display"),
-      o: open("raycast://extensions/raycast/window-management/next-display"),
-      k: open("raycast://extensions/raycast/window-management/top-half"),
-      j: open("raycast://extensions/raycast/window-management/bottom-half"),
-      h: open("raycast://extensions/raycast/window-management/left-half"),
-      l: open("raycast://extensions/raycast/window-management/right-half"),
-      f: open("raycast://extensions/raycast/window-management/maximize"),
+      y: raycastWindow("previous-display"),
+      o: raycastWindow("next-display"),
+      k: raycastWindow("top-half"),
+      j: raycastWindow("bottom-half"),
+      h: raycastWindow("left-half"),
+      l: raycastWindow("right-half"),
+      f: raycastWindow("maximize"),
       u: {
         description: "Window: Previous Tab",
         to: [

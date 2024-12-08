@@ -239,10 +239,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+                    "shell_command": "open -a 'Todoist.app'"
                   }
                 ],
-                "description": "Open raycast://extensions/stellate/mxstbr-commands/create-notion-todo",
+                "description": "Open -a 'Todoist.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "spacebar",
@@ -1075,10 +1075,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/window-management/previous-display"
+                    "shell_command": "open -g raycast://extensions/raycast/window-management/previous-display"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/window-management/previous-display",
+                "description": "Window: previous-display",
                 "type": "basic",
                 "from": {
                   "key_code": "y",
@@ -1099,10 +1099,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/window-management/next-display"
+                    "shell_command": "open -g raycast://extensions/raycast/window-management/next-display"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/window-management/next-display",
+                "description": "Window: next-display",
                 "type": "basic",
                 "from": {
                   "key_code": "o",
@@ -1123,10 +1123,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/window-management/top-half"
+                    "shell_command": "open -g raycast://extensions/raycast/window-management/top-half"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/window-management/top-half",
+                "description": "Window: top-half",
                 "type": "basic",
                 "from": {
                   "key_code": "k",
@@ -1147,10 +1147,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/window-management/bottom-half"
+                    "shell_command": "open -g raycast://extensions/raycast/window-management/bottom-half"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/window-management/bottom-half",
+                "description": "Window: bottom-half",
                 "type": "basic",
                 "from": {
                   "key_code": "j",
@@ -1171,10 +1171,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/window-management/left-half"
+                    "shell_command": "open -g raycast://extensions/raycast/window-management/left-half"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/window-management/left-half",
+                "description": "Window: left-half",
                 "type": "basic",
                 "from": {
                   "key_code": "h",
@@ -1195,10 +1195,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/window-management/right-half"
+                    "shell_command": "open -g raycast://extensions/raycast/window-management/right-half"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/window-management/right-half",
+                "description": "Window: right-half",
                 "type": "basic",
                 "from": {
                   "key_code": "l",
@@ -1219,10 +1219,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/window-management/maximize"
+                    "shell_command": "open -g raycast://extensions/raycast/window-management/maximize"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/window-management/maximize",
+                "description": "Window: maximize",
                 "type": "basic",
                 "from": {
                   "key_code": "f",
